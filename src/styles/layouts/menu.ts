@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import transition from 'styled-transition-group'
 
 export const Entire = styled.nav`
 position: fixed;
@@ -26,13 +27,31 @@ z-index: 20;
 }
 `
 
-export const MainContent = styled.ul`
+export const MainContent = transition.ul.attrs({
+  timeout: 200,
+  unmountOnExit: true,
+})`
 width: 100vw;
 height: 100vh;
 background: rgba(0, 0, 0, 0.7);
 display: flex;
 justify-content: space-evenly;
 align-items: center;
+
+&:enter {
+  opacity: 0.01;
+}
+&:enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+&:exit {
+  opacity: 1;
+}
+&:exit-active {
+  opacity: 0.01;
+  transition: opacity 200ms ease;
+}
 
 @media screen and (min-width: 1024px) {
 }

@@ -21,21 +21,6 @@ const Menu: React.FC = () => {
     setIsActiveMenu(false)
   }
 
-  const renderMainContent = () => (
-    <Styled.MainContent>
-      <Styled.Contents
-        onClick={handleClickLink.bind(null, 'about')}
-      >
-        about
-      </Styled.Contents>
-      <Styled.Contents
-        onClick={handleClickLink.bind(null, '')}
-      >
-        works
-      </Styled.Contents>
-    </Styled.MainContent>
-  )
-
   return (
     <Styled.Entire>
       <Styled.HumbergerWrap>
@@ -44,11 +29,21 @@ const Menu: React.FC = () => {
           isActive={isActiveMenu}
         />
       </Styled.HumbergerWrap>
-        {
-          isActiveMenu
-            ? renderMainContent()
-            : null
-        }
+      <Styled.MainContent
+        in={isActiveMenu}
+        timeout={200}
+      >
+        <Styled.Contents
+          onClick={handleClickLink.bind(null, 'about')}
+        >
+          about
+        </Styled.Contents>
+        <Styled.Contents
+          onClick={handleClickLink.bind(null, '')}
+        >
+          works
+        </Styled.Contents>
+      </Styled.MainContent>
     </Styled.Entire>
   )
 }

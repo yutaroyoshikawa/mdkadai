@@ -8,7 +8,9 @@
     "react-router": "^4.4.0-beta.8",
     "react-router-dom": "^4.4.0-beta.8",
     "react-scripts-ts": "3.1.0",
+    "react-transition-group": "^4.2.1",
     "styled-components": "^5.0.0-beta.6-ej4",
+    "styled-transition-group": "^2.0.0",
     "use-react-router": "^1.0.7"
   },
   "scripts": {
