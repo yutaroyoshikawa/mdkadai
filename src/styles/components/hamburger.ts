@@ -1,13 +1,25 @@
 import styled, { css } from 'styled-components'
 
 export const Entire = styled.div`
-width: 60px;
-height: 20px;
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
 justify-content: space-between;
 cursor: pointer;
+@media screen and (min-width: 1024px) {
+  width: 60px;
+  height: 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  width: 60px;
+  height: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  width: 28px;
+  height: 8px;
+}
 `
 
 const bar = css`
@@ -22,10 +34,28 @@ ${bar}
 transition: transform 400ms ease;
 transform-origin: center;
 
+@media screen and (min-width: 1024px) {
 ${
   props => props.itemScope
     ? `transform: rotate(20deg) translateY(10px)`
     : `transform: rotate(0deg)`
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+${
+  props => props.itemScope
+    ? `transform: rotate(20deg) translateY(10px)`
+    : `transform: rotate(0deg)`
+}
+}
+
+@media screen and (max-width: 767px) {
+${
+  props => props.itemScope
+    ? `transform: rotate(20deg) translateY(4px)`
+    : `transform: rotate(0deg)`
+}
 }
 `
 
@@ -35,9 +65,27 @@ ${bar}
 transition: transform 400ms ease;
 transform-origin: center;
 
+@media screen and (min-width: 1024px) {
 ${
   props => props.itemScope
     ? `transform: rotate(-20deg) translateY(-10px)`
     : `transform: rotate(0deg)`
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+${
+  props => props.itemScope
+    ? `transform: rotate(-20deg) translateY(-10px)`
+    : `transform: rotate(0deg)`
+}
+}
+
+@media screen and (max-width: 767px) {
+${
+  props => props.itemScope
+    ? `transform: rotate(-20deg) translateY(-4px)`
+    : `transform: rotate(0deg)`
+}
 }
 `

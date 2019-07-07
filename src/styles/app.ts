@@ -105,8 +105,18 @@ width: 100vw;
 display: flex;
 justify-content: center;
 position: fixed;
-top: 30px;
 z-index: 21;
+@media screen and (min-width: 1024px) {
+	top: 30px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	top: 30px;
+}
+
+@media screen and (max-width: 767px) {
+	top: 17px;
+}
 `
 
 export const MenuWrap = styled.div`
