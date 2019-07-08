@@ -68,8 +68,6 @@ align-items: center;
 `
 
 export const Contents = styled.li`
-width: 103px;
-height: 103px;
 border: solid 1px #fff;
 cursor: pointer;
 display: flex;
@@ -79,5 +77,20 @@ transition: background 200ms ease;
 
 &:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+@media screen and (min-width: 1024px) {
+  width: 103px;
+  height: 103px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  width: 103px;
+  height: 103px;
+}
+
+@media screen and (max-width: 767px) {
+  width: 51px;
+  height: 51px;
+  font-size: 7px;
 }
 `
