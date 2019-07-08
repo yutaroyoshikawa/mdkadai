@@ -5,7 +5,9 @@ import * as Styled from '../styles/layouts/opening'
 const Opening: React.FC = () => {
   return (
     <Styled.Entire>
-      <Logo />
+      <Styled.LogoWrap>
+        <Logo />
+      </Styled.LogoWrap>
     </Styled.Entire>
   )
 }
